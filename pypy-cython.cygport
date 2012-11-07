@@ -1,0 +1,22 @@
+ORIG_PN="Cython"
+inherit pypy-distutils
+
+NAME="pypy-cython"
+VERSION=0.17.1
+RELEASE=1
+CATEGORY="Python"
+SUMMARY="C extension language for PyPy"
+DESCRIPTION="Cython is a language that makes writing C extensions for the
+Python language as easy as Python itself. It is based on the well-known Pyrex,
+but supports more cutting edge functionality and optimizations."
+HOMEPAGE="http://www.cython.org/"
+
+# spaces in CFLAGS messes up distutils
+CFLAGS=-O2
+RESTRICT="debuginfo"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	pypy_distutils_compile --cython-compile-all
+}
