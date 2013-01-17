@@ -2,7 +2,7 @@ ORIG_PN="Cython"
 inherit pypy-distutils
 
 NAME="pypy-cython"
-VERSION=0.17.2
+VERSION=0.17.4
 RELEASE=1
 CATEGORY="Python"
 SUMMARY="C extension language for PyPy"
